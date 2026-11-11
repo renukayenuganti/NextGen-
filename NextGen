@@ -1,0 +1,405 @@
+This above are aim procedure and code and output result
+
+## Aim
+
+To create a responsive **NextGen Technology** website using React that includes a navigation bar, home section, About section, technology cards, contact section, and footer.
+
+## Procedure
+
+1. Create a React project folder named `nextgen-technology`.
+2. Create the required folders and files:
+   - `public/index.html`
+   - `src/index.js`
+   - `src/index.css`
+   - `src/App.js`
+   - `src/App.css`
+   - `package.json`
+3. Add the HTML structure in `public/index.html`.
+4. Write the React component code in `src/App.js`.
+5. Add styling in `src/App.css` and `src/index.css`.
+6. Install the required packages using `npm install`.
+7. Start the development server using `npm start`.
+8. Open `http://localhost:3000` in a web browser to view the website.
+
+## Code
+
+### `public/index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGen Technology</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+### `src/index.js`
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+### `src/index.css`
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f4f7ff;
+  font-family: Arial, sans-serif;
+}
+```
+
+### `src/App.js`
+
+```jsx
+import React from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div>
+      <nav className="navbar">
+        <h2>
+          NextGen<span>Technology</span>
+        </h2>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section className="hero" id="home">
+        <div className="hero-content">
+          <h1>Welcome to NextGen Technology</h1>
+          <h3>Innovate Today, Create Tomorrow</h3>
+          <p>
+            Explore the future of technology with creativity, innovation and
+            digital solutions.
+          </p>
+          <a href="#services" className="btn">
+            Explore More
+          </a>
+        </div>
+      </section>
+
+      <section className="about" id="about">
+        <h2>About Us</h2>
+        <p>
+          NextGen Technology is a platform dedicated to exploring modern
+          technology, web development, artificial intelligence and digital
+          innovation.
+        </p>
+      </section>
+
+      <section className="services" id="services">
+        <h2>Our Technologies</h2>
+
+        <div className="cards">
+          <div className="card">
+            <h3>💻 Web Development</h3>
+            <p>Create modern and responsive websites.</p>
+          </div>
+
+          <div className="card">
+            <h3>🤖 Artificial Intelligence</h3>
+            <p>Discover the power of smart technology.</p>
+          </div>
+
+          <div className="card">
+            <h3>📱 Mobile Technology</h3>
+            <p>Explore innovative mobile applications.</p>
+          </div>
+
+          <div className="card">
+            <h3>☁️ Cloud Computing</h3>
+            <p>Experience powerful cloud solutions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact" id="contact">
+        <h2>Let&apos;s Build the Future Together!</h2>
+        <p>Technology makes our future smarter and better.</p>
+
+        <a href="mailto:info@nextgentechnology.com" className="btn">
+          Contact Us
+        </a>
+      </section>
+
+      <footer>
+        <p>© 2026 NextGen Technology | All Rights Reserved</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### `src/App.css`
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f4f7ff;
+}
+
+.navbar {
+  background: #101b3d;
+  color: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h2 span {
+  color: #00d4ff;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #00d4ff;
+}
+
+.hero {
+  min-height: 450px;
+  background: linear-gradient(135deg, #101b3d, #075b91);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 50px 20px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero-content h3 {
+  color: #00d4ff;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-block;
+  background: #00d4ff;
+  color: #101b3d;
+  padding: 13px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: white;
+}
+
+.about,
+.services,
+.contact {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.about h2,
+.services h2,
+.contact h2 {
+  color: #101b3d;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.about p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+  color: #555;
+}
+
+.services {
+  background: #eaf2ff;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.card {
+  background: white;
+  padding: 35px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: #101b3d;
+  color: white;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  line-height: 1.6;
+}
+
+.contact p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+footer {
+  background: #101b3d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar ul {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+### `package.json`
+
+```json
+{
+  "name": "nextgen-technology",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+```
+
+## Output / Result
+
+After running:
+
+```bash
+npm install
+npm start
+```
+
+The website opens at:
+
+```text
+http://localhost:3000
+```
+
+The output displays:
+
+- A dark blue navigation bar with **NextGenTechnology** and menu links.
+- A home/hero section with the heading **“Welcome to NextGen Technology.”**
+- An **About Us** section.
+- Four technology cards: Web Development, Artificial Intelligence, Mobile Technology, and Cloud Computing.
+- A contact section with a **Contact Us** button.
+- A footer displaying **© 2026 NextGen Technology | All Rights Reserved**.
+- On mobile screens, the navigation menu and technology cards become responsive.
+
+Thus, the NextGen Technology website was successfully created and displayed using React.
+
